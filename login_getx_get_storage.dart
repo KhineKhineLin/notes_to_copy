@@ -10,27 +10,15 @@ void main() async {
 }
 
 class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return GetMaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: AuthMiddleware(),
-    );
-  }
-}
-
-class AuthMiddleware extends StatelessWidget {
   final storage = GetStorage();
 
   @override
   Widget build(BuildContext context) {
-    // Check if token exists
     String? token = storage.read('token');
-    if (token != null) {
-      return HomePage(); // Go to HomePage if token exists
-    } else {
-      return LoginPage(); // Otherwise, go to LoginPage
-    }
+
+    return GetMaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: token != null ? HomePage() : LoginPage());
   }
 }
 
