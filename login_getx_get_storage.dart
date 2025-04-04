@@ -43,16 +43,16 @@ class LoginPage extends StatelessWidget {
           // Navigate to HomePage
           Get.off(HomePage());
         } else {
-          Get.snackbar('Login Failed', responseData['message'],
-              snackPosition: SnackPosition.BOTTOM);
+          // Get.snackbar('Login Failed', responseData['message'],
+          //     snackPosition: SnackPosition.BOTTOM);
         }
       } else {
-        Get.snackbar('Error', 'Server error. Please try again later.',
-            snackPosition: SnackPosition.BOTTOM);
+        // Get.snackbar('Error', 'Server error. Please try again later.',
+        //     snackPosition: SnackPosition.BOTTOM);
       }
     } catch (e) {
-      Get.snackbar('Error', 'Something went wrong: $e',
-          snackPosition: SnackPosition.BOTTOM);
+      // Get.snackbar('Error', 'Something went wrong: $e',
+      //     snackPosition: SnackPosition.BOTTOM);
     }
   }
 
